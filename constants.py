@@ -1,4 +1,4 @@
-EWS BULLSHIT ROLES HOORAY
+
 
 # ----------------------------
 # Guild, channel and roles
