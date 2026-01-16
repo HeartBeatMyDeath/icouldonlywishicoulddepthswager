@@ -1094,7 +1094,13 @@ async def on_ready():
     except Exception as e:
         print(f"❌ Slash command sync error: {e}")
 
+    # ---------------------------
+    # Add persistent views here
+    # ---------------------------
+    bot.add_view(RoleTicketPanel())  # <-- IMPORTANT
+
     print(f"Logged in as {bot.user}")
+
 
 #--------------------------------------------------------------------
 # Role panel bullshit
@@ -1205,13 +1211,16 @@ async def create_ticket(interaction: discord.Interaction, role_name: str):
 class RoleApplyButton(ui.Button):
     def __init__(self, role_name: str):
         super().__init__(
-            label="Apply",
-            style=discord.ButtonStyle.primary
+                label="Apply",
+                style=discord.ButtonStyle.primary,
+                custom_id=f"apply_{role_name}"  # <-- REQUIRED for persistence
         )
         self.role_name = role_name
 
     async def callback(self, interaction: discord.Interaction):
         await create_ticket(interaction, self.role_name)
+
+
 
 
 # ------------------ ROLE SECTION HELPER ------------------
@@ -1231,7 +1240,7 @@ def role_section(title: str, description: str) -> ui.Section:
 
 class RoleTicketPanel(ui.LayoutView):
     def __init__(self):
-        super().__init__()
+        super().__init__(timeout=None)
 
         nigger = ui.TextDisplay("## **Other**")
         header = ui.TextDisplay("## **EWS Tickets**")
