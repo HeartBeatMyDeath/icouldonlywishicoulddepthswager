@@ -1109,7 +1109,11 @@ async def on_ready():
 # ------------------ CLOSE TICKET BUTTON ------------------
 
 class CloseTicketRow(ui.ActionRow):
-    @ui.button(label="Close Ticket", style=discord.ButtonStyle.danger)
+    @ui.button(
+        label="Close Ticket",
+        style=discord.ButtonStyle.danger,
+        custom_id="close_ticket"  # <-- REQUIRED
+    )
     async def close_ticket(self, interaction: discord.Interaction, button: ui.Button):
         await interaction.response.send_message(
             "🗑️ Closing ticket in 3 seconds...",
@@ -1117,6 +1121,7 @@ class CloseTicketRow(ui.ActionRow):
         )
         await asyncio.sleep(3)
         await interaction.channel.delete()
+
 
 
 # ------------------ CREATE TICKET ------------------
@@ -1195,7 +1200,7 @@ async def create_ticket(interaction: discord.Interaction, role_name: str):
         accent_color=discord.Color.red()
     )
 
-    view = ui.LayoutView()
+    view = ui.LayoutView(timeout=None)
     view.add_item(container)
 
     await channel.send(view=view)
