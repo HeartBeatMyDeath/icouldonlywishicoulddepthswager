@@ -1371,7 +1371,7 @@ async def on_member_join(member: discord.Member):
     )
 
 
-rules_channel_id = 1442627111553859775
+rules_channel_id = 1362884136460616023
 
 #------------------------------------------------------------------
 class BoosterPanel(ui.LayoutView):
