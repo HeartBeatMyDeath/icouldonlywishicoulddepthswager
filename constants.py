@@ -13,13 +13,13 @@ MOD_LOG_CHANNEL_ID = 1438981968380301403 # !
 VOUCH_CHANNEL_ID = 1442867774337843381 #
 
 PERMISSION_TIERS = {
-    1442864016966815936: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete",
+    1362889706563440900: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete",
                           "panel"],  # owner
-    1442864055059480739: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # co owner
-    1442864095723520071: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # senior
-    1442968562028253214: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # mod
-    1442864073149649017: ["kick", "timeout", "log", "warn", "warnlog", "warndelete"],  # junior
-    1442864159275618325: ["timeout", "warn", "warnlog", "warndelete", "log"],  # trial
+    1362896066504036402: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # co owner
+    1399809075252039824: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # senior
+    1391861560967954483: ["kick", "ban", "timeout", "log", "warn", "warnlog", "warndelete"],  # mod
+    1399808293999738961: ["kick", "timeout", "log", "warn", "warnlog", "warndelete"],  # junior
+    1440250118946164816: ["timeout", "warn", "warnlog", "warndelete", "log"],  # trial
 }
 
 
